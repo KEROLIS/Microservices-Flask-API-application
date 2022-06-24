@@ -40,4 +40,4 @@ def total_sentiment(hotel_name:str):
     hotel_postive = total_p_values / len(hotel_data_reviews)
     hotel_negative = total_n_values / len(hotel_data_reviews)
 
-    return {"postive_sentement" :hotel_postive,"hotel_negative":hotel_negative}
+    return {"postive_sentement" :hotel_postive,"negative_sentement":hotel_negative}
