@@ -14,8 +14,9 @@ def total_sentiment(hotel_name:str):
             Args :
                 hotel_name (string) : the hotel name as produced in the file
             Return :
-                hotel_postive (float): the postive normalized value of the total sentiment reviews
-                hotel_negative (float): the negative normalized value of the total sentiment reviews
+                A dictionary contains :            
+                    hotel_postive (float): the postive normalized value of the total sentiment reviews
+                    hotel_negative (float): the negative normalized value of the total sentiment reviews
     """
     # getting the reviews for a specific hotel
     hotel_data =  hotels_data[hotels_data['name']==hotel_name]
