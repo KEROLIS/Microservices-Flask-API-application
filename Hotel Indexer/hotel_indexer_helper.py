@@ -32,6 +32,10 @@ hotels_data['negative_sentment']=negative_value
 hotels_names = hotels_data['name'].unique().tolist()
 
 def hotels_indexer():
+    """ This function is responsable for using ElasticSearch to index all data found in dataset for each hotel
+        Return :
+            (String) : A message contains if there's an error while indexing will be reported else the message will be done.
+    """
     # indexing the data of each hotel in one document
     for hotel in hotels_names:
         hotel_data = hotels_data[hotels_data['name'] == hotel]
