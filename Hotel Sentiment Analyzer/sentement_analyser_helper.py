@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np 
 from textblob import TextBlob
 from textblob.sentiments import NaiveBayesAnalyzer
+from tqdm import tqdm 
 
 # reading the dataset from the CSV file
 hotels_data = pd.read_csv("/mnt/0587414f-77cd-413d-b421-9bd6abd5d331/Wzzuf/Hotel Sentiment Analyzer/7282_1.csv")
@@ -32,7 +33,8 @@ def total_sentiment(hotel_name:str):
     total_p_values = 0
 
     # calcualting the sentiment for each text in the reviews and accumulate them 
-    for review in hotel_data_reviews :
+    print("the process of sentment analyser for the hotel {} started :".format(hotel_name))
+    for review in tqdm(hotel_data_reviews) :
         blob = TextBlob(review, analyzer=NaiveBayesAnalyzer())
         total_n_values += blob.sentiment.p_neg
         total_p_values += blob.sentiment.p_pos
