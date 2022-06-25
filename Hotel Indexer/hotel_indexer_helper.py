@@ -4,8 +4,7 @@ from textblob import TextBlob
 from textblob.sentiments import NaiveBayesAnalyzer
 from tqdm import tqdm
 # reading the dataset from the CSV file
-hotels_data = pd.read_csv(
-    "/mnt/0587414f-77cd-413d-b421-9bd6abd5d331/Wzzuf/Hotel Sentiment Analyzer/7282_1.csv")
+hotels_data = pd.read_csv("7282_1.csv")
 
 # establishing the connection with the elastic search API
 es_client = connections.create_connection(hosts=["http://localhost:9200/"])
